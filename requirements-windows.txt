@@ -1,0 +1,7 @@
+# 王二审计抽凭 v1.2.0-beta - Windows x64 candidate dependencies
+# 版本需在公司 Windows 电脑上完成一次干净环境验证后冻结。
+paddlepaddle==3.3.0
+paddleocr==3.7.0
+PyMuPDF==1.24.13
+openpyxl==3.1.5
+Pillow>=10.0.0

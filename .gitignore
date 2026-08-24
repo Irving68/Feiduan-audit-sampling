@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.env
+*.log
+
+# Generated local data: never commit
+runtime/
+models/
+releases/
+*.xlsx
+*.xls
+*.pdf
+*.jpg
+*.jpeg
+*.png
+
+# Release binaries
+*.zip
+*.sha256

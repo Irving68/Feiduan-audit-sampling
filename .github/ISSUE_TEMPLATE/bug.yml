@@ -1,0 +1,48 @@
+name: Bug 报告
+description: 使用虚构或彻底脱敏的信息报告可复现问题
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请勿上传客户资料、原始凭证、OCR 全文、工作底稿、个人信息、本地绝对路径、Token 或未脱敏截图。
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      placeholder: v1.2.0-beta
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: 处理模式
+      options:
+        - 整套资料
+        - 非整套资料
+        - 尚未进入处理
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 仅使用虚构名称和数据描述问题。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 最小复现步骤
+      description: 不要粘贴完整日志；请先移除用户名、路径和业务数据。
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我确认没有提交客户资料、个人信息、凭证、OCR 全文、密钥或内部路径。
+          required: true

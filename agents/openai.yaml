@@ -1,0 +1,4 @@
+interface:
+  display_name: "王二审计抽凭 v1.2.0-beta"
+  short_description: "Windows本地OCR、审计字段提取、Excel与证据高亮"
+  default_prompt: "请使用 $wanger-audit-sampling 处理我提交的抽凭资料，先询问整套或非整套模式，再生成Excel和本地高亮预览。"

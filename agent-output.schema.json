@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "王二审计抽凭 v1.2.0-beta Agent Output",
+  "type": "object",
+  "required": ["fields"],
+  "properties": {
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["document_type", "file", "file_id", "group_id", "name", "value", "raw_value", "page_hint", "source_text", "correction", "evidence_word_ids", "confidence", "importance"],
+        "properties": {
+          "document_type": {"type": "string"},
+          "file": {"type": "string"},
+          "file_id": {"type": "string"},
+          "group_id": {"type": "string"},
+          "name": {"type": "string"},
+          "value": {"type": ["string", "number", "boolean"]},
+          "raw_value": {"type": ["string", "number", "boolean"]},
+          "page_hint": {"type": ["integer", "null"], "minimum": 1},
+          "source_text": {"type": "string"},
+          "correction": {"type": "string"},
+          "evidence_word_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": true
+          },
+          "review_status": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "importance": {"const": "high"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
