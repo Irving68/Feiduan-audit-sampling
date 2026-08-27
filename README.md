@@ -6,7 +6,7 @@ Windows 本地优先的审计抽凭工具：本地 OCR、坐标级证据绑定�
 
 ## 下载 Windows 最新版
 
-[下载 Windows 便携版（无需安装 Python）](../../releases/latest/download/WangEr-Audit-Sampling-Windows.zip)
+[下载 Windows 便携版（无需安装 Python）](https://github.com/giorwang1996-prog/wanger-audit-sampling/releases/download/v1.2.0-beta/WangEr-Audit-Sampling-Windows.zip)
 
 普通用户请使用上面的 Release 安装包。不要使用 GitHub 页面中 `Code → Download ZIP` 自动生成的源码包；源码包不包含便携 Python 和 OCR 模型。
 
