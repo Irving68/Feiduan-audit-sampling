@@ -1,68 +1,37 @@
-# 飛段审计抽凭｜Feiduan Audit Sampling
+# 飞段抽凭工具｜Windows v1.3.1
 
-Windows 本地优先的审计抽凭工具：本地 OCR、坐标级证据绑定、Excel 结果和黄色高亮预览。
+这是飞段抽凭工具的公开下载入口。仓库地址保持不变：<https://github.com/Irving68/Feiduan-audit-sampling>。
 
-> 当前版本：v1.2.0-beta。Beta 版本仅用于测试和反馈，不能替代审计人员的专业判断与复核。
+> 当前公开版本：Windows v1.3.1。它是免费本地内部使用的二进制发行版，不是开源源码仓库。
 
 ## 下载 Windows 最新版
 
-[下载 Windows 便携版（无需安装 Python）](https://github.com/giorwang1996-prog/wanger-audit-sampling/releases/download/v1.2.0-beta/WangEr-Audit-Sampling-Windows.zip)
+[下载 Windows v1.3.1](../../releases/latest/download/Feiduan-sampling-Windows-v1.3.1.zip)
 
-普通用户请使用上面的 Release 安装包。不要使用 GitHub 页面中 `Code → Download ZIP` 自动生成的源码包；源码包不包含便携 Python 和 OCR 模型。
+下载后请同时取得 Release 中的 `checksums.txt`，核验 ZIP 的 SHA-256。不要使用 GitHub 的 `Code → Download ZIP`；它只包含本说明材料，不包含可运行程序、Python 运行环境或 OCR 模型。
 
-下载后：
+## 安装与使用
 
-1. 解压到本地普通文件夹；
-2. 将整个文件夹作为 Skill 导入支持本地文件和命令调用的 Agent；
-3. 在 Agent 中提出“使用王二审计抽凭处理这些资料”；
-4. 选择“整套资料”或“非整套资料”；
-5. 获取 Excel 和本地高亮预览。
+1. 解压 `Feiduan-sampling-Windows-v1.3.1.zip` 到一个具有读写权限的本地文件夹。
+2. 在解压目录运行 `Install-Windows.ps1`，完成后重启 WorkBuddy。
+3. 按压缩包内的 Skill 说明，让 Agent 开始抽凭。
 
-详细步骤见 [安装说明](docs/installation.md)。
+详细步骤、数据边界与限制见 [安装说明](docs/installation.md)、[隐私说明](docs/privacy.md) 和 [已知限制](docs/limitations.md)。
 
-## 功能
+## 授权边界
 
-- Windows 10/11 x64 便携运行环境；
-- PDF、JPG、JPEG、PNG 和文件夹输入；
-- PaddleOCR 本地文字识别；
-- OCR 词级坐标和证据 ID；
-- Agent 复核与结构化字段协议；
-- Excel 输出及本地高亮预览；
-- 任务中断恢复和历史结果重新打开。
+飞段自有代码、可执行程序、脚本、Skill、配置及随包文档按 [免费使用许可](LICENSE) 提供：个人和企业可以免费在自己控制的设备上作合法的内部业务、学习或测试使用。
 
-## 隐私边界
+未经权利人书面许可，不得再分发、转售、出租、托管、作为面向第三方的服务提供、冒充官方、逆向工程或规避保护；适用法律强制允许的范围除外。第三方组件继续按其各自许可证提供，见 [第三方组件与许可证通知](THIRD_PARTY_NOTICES.md)。
 
-- PDF、图片、OCR、坐标、高亮和 Excel 处理由本地引擎完成；
-- OCR 文本会写入本地任务目录；
-- 如果使用联网 Agent，Agent 读取 OCR 文本时可能将文本发送给其服务提供商；
-- 使用前请确认符合所在单位的数据安全、保密和跨境传输要求；
-- 不要在 GitHub Issues 中上传客户资料、OCR 全文、底稿或未脱敏截图。
+## 版本与历史
 
-完整说明见 [隐私说明](docs/privacy.md)。
+- v1.3.1 是当前公开的 Windows 二进制发行版。自有材料不适用旧版 AGPL-3.0。
+- 仓库历史中的 v1.2.0-beta 曾以 AGPL-3.0 公开发布；该历史版本及其已获得副本仍受其原有许可证约束。本页与 v1.3.1 发行包不会将 AGPL-3.0 延伸至新版自有材料。
+- 旧版不再作为官方下载渠道维护。历史记录不会因本页更新而被改写或撤销。
 
-## 仓库与安装包
+## 数据与审计提示
 
-- 本仓库保存 Skill、引擎源码、构建脚本、协议和测试；
-- Windows 便携 Python、第三方依赖和 OCR 模型放在 GitHub Releases；
-- 普通用户无需自行安装 Python；
-- 开发者可使用 `windows/build-portable.ps1` 构建便携环境，再使用 `windows/build-package.ps1` 生成发布包。
+PDF、图片、OCR、证据坐标、Excel 和高亮预览由本地 Engine 处理。如果用户选择联网的 Agent 或模型，字段判断所需的 OCR 候选文字可能由相应服务提供商处理。请先确认符合单位的数据安全制度，并由审计人员复核全部结果；本工具不替代专业判断，也不对审计结论提供保证。
 
-## 当前限制
-
-这是参赛版本的公开 Beta：
-
-- 仅支持 Windows x64；
-- 字段结果必须由审计人员复核；
-- 凭证版式、扫描质量和 Agent 能力会影响结果；
-- 暂不提供自动更新、团队权限、项目归档或 Excel 插件；
-- 不保证适配所有 Agent 和企业电脑安全策略。
-
-更多内容见 [已知限制](docs/limitations.md)。
-
-## 反馈
-
-欢迎提交 Bug 和功能建议，但请只使用虚构或彻底脱敏的复现材料。安全问题请参阅 [SECURITY.md](SECURITY.md)。
-
-## 许可证
-
-本项目自有代码采用 AGPL-3.0 许可证。打包的 Python、PaddleOCR、PP-OCR 模型及其他依赖保留各自许可证，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。项目名称“王二审计抽凭”及相关标识不因代码许可证而授权他人冒充官方版本。
+请勿在公开 Issue、截图或日志中上传客户资料、OCR 全文、凭证、工作底稿、个人信息或未脱敏图像。安全问题请参阅 [安全政策](SECURITY.md)。

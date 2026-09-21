@@ -1,11 +1,14 @@
 # 更新记录
 
-## v1.2.0-beta
+## v1.3.1
 
-- 首次公开的 Community Edition；
-- Windows x64 便携 Python 和本地 PP-OCRv5；
-- 整套资料与非整套资料模式；
-- Agent 结构化字段协议和证据词 ID；
-- Excel 输出、字段链接和本地黄色高亮预览；
-- 中断恢复、历史任务打开和人工复核标记；
-- 明确本地 OCR 与联网 Agent 之间的数据边界。
+- 发布 Windows 二进制安装包 `Feiduan-sampling-Windows-v1.3.1.zip`；
+- 本仓库调整为公开下载与说明入口，不包含 v1.3.1 Engine 源码、构建脚本或 Skill 源文件；
+- 自有材料采用免费本地内部使用许可；第三方组件继续遵守其各自许可证；
+- 新版不适用历史 v1.2.0-beta 的 AGPL-3.0 许可。
+
+## v1.2.0-beta（历史）
+
+- v1.2.0-beta 曾作为公开 Community Edition 发布；
+- 该历史版本的自有源码按 AGPL-3.0 发布；
+- 历史记录不构成对 v1.3.1 自有材料的 AGPL-3.0 授权。
